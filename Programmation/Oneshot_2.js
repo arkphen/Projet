@@ -7,7 +7,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'acharland',
     password:'',
-    database:'MonApplication'
+    database:'Compagnie_Location'
 });
 
 
@@ -16,13 +16,15 @@ connection.connect(function (err) {
 
 
     for (var i = 0; i< 1000; i++) {
-        var prenom = "User" + i;
-        var nom = "Last" + i;
+        var Marque = "marque" + i;
+        var nomModele = "modele" + i;
+        var Numero_Serie = "nstest" + i;
+
 
         connection.query(
             {
-                sql: "insert into professeur values(null,?,?)",
-                values: [prenom,nom]
+                sql: "insert into Inventaire_de_Vehicules values(null,?,?)",
+                values: [Marque,nomModele,Numero_Serie]
             },
             function (err, rows, fields) {
                 if (err) throw err;
