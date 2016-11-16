@@ -11,7 +11,6 @@ var connection = mysql.createConnection({
 
 
 connection.connect(function (err) {
-    if (err) throw err;
 
 
     for (var i = 0; i< 300; i++) {
@@ -20,7 +19,7 @@ connection.connect(function (err) {
         var Adresse = "adresse" + i;
         var Ville = "ville" + i;
         var Permit = "numero permit" + i;
-
+        if (err) throw err;
         connection.query(
             {
                 sql: "insert into Liste_Clients values(null,?,?,?,?,?)",
