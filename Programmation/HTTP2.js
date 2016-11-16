@@ -7,7 +7,7 @@ var mysql = require('mysql');
 
 const PORT =8080;
 var req = {
-    "professeur" : "select ? from professeur where id = ?",
+    "professeur" : "select * from professeur where id = ?",
     "etudiant" : "select * from etudiant where id = ?"
 };
 
@@ -40,10 +40,11 @@ function handleRequest(request, response) {
             });
     });
 
-    var server = http.createServer(handleRequest);
 
-    server.listen(PORT, function () {
-
-        console.log("Server listening on: http://localhost:%s", PORT);
-    });
 }
+var server = http.createServer(handleRequest);
+
+server.listen(PORT, function () {
+
+    console.log("Server listening on: http://localhost:%s", PORT);
+});
