@@ -12,19 +12,22 @@ var connection = mysql.createConnection({
 
 
 connection.connect(function (err) {
+
+
+    var Marque = "marque" + i;
+    var nomModele = "modele" + i;
+    var Annee = "Annee" + i;
+    var Kilometrage = "kilo" + i;
+    var Couleur = "couleur" + i;
+    var Numero_Serie = "nstest" + i;
+
     if (err) throw err;
-
-
     for (var i = 0; i< 1000; i++) {
-        var Marque = "marque" + i;
-        var nomModele = "modele" + i;
-        var Numero_Serie = "nstest" + i;
-
 
         connection.query(
             {
-                sql: "insert into Inventaire_de_Vehicules values(null,?,?)",
-                values: [Marque,nomModele,Numero_Serie]
+                sql: "insert into Inventaire_de_Vehicules values(null,?,?,?)",
+                values: [Marque,nomModele,Annee,Kilometrage,Couleur,Numero_Serie]
             },
             function (err, rows, fields) {
                 if (err) throw err;
