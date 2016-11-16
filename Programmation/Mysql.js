@@ -15,13 +15,16 @@ connection.connect(function (err) {
 
 
     for (var i = 0; i< 1000; i++) {
-        var prenom = "User" + i;
-        var nom = "Last" + i;
+        var Prenom = "User" + i;
+        var Nom = "Last" + i;
+        var Adresse = "adresse" + i;
+        var Ville = "ville" + i;
+        var Permit = "numero permit" + i;
 
         connection.query(
             {
-                sql: "insert into professeur values(null,?,?)",
-                values: [prenom,nom]
+                sql: "insert into Liste_Clients values(null,?,?,?,?,?)",
+                values: [Prenom,Nom,Adresse,Ville,Permit]
             },
             function (err, rows, fields) {
                 if (err) throw err;
