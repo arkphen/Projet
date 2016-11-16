@@ -14,7 +14,7 @@ connection.connect(function (err) {
     if (err) throw err;
 
 
-    for (var i = 0; i< 1000; i++) {
+    for (var i = 0; i< 300; i++) {
         var Prenom = "User" + i;
         var Nom = "Last" + i;
         var Adresse = "adresse" + i;
@@ -24,8 +24,10 @@ connection.connect(function (err) {
         connection.query(
             {
                 sql: "insert into Liste_Clients values(null,?,?,?,?,?)",
-                values: [Prenom,Nom,Adresse,Ville,Permit]
+                values: [Prenom,Nom,Adresse,Ville,Permit],
+
             },
+
             function (err, rows, fields) {
                 if (err) throw err;
 
