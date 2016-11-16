@@ -1,6 +1,5 @@
-/**
- * Created by acharland on 11/9/16.
- */
+/*** Created by acharland on 11/9/16.*/
+
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
@@ -21,13 +20,13 @@ connection.connect(function (err) {
 
         connection.query(
             {
-                sql: "delete from professeur where prenom=?",
-                values: [prenom]
+                sql: "insert into professeur values(null,?,?)",
+                values: [prenom,nom]
             },
             function (err, rows, fields) {
                 if (err) throw err;
 
-                console.log("REMOVE");
+                console.log("added");
             });
     }
     connection.end();
