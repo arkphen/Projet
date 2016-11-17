@@ -9,22 +9,20 @@ var connection = mysql.createConnection({
     database:'Agence_de_location'
 });
 
-
 connection.connect(function (err) {
 
+    for (var a = 0; a < 5; a++) {
+        var Prenom = "User_" + a;
+        var Nom = "Last_" + a;
+        var Adresse = "Adresse_" + a;
+        var Ville = "Ville_" + a;
+        var Permit = "Permit" + a;
 
-    for (var i = 0; i < 5; i++) {
-        var Prenom = "User_" + i;
-        var Nom = "Last_" + i;
-        var Adresse = "Adresse_" + i;
-        var Ville = "Ville_" + i;
-        var Permit = "Permit" + i;
         if (err) throw err;
         connection.query(
             {
                 sql: "insert into Liste_Clients values(null,?,?,?,?,?)",
                 values: [Prenom,Nom,Adresse,Ville,Permit]
-
             },
 
             function (err, rows, fields) {
@@ -32,6 +30,7 @@ connection.connect(function (err) {
 
                 console.log("added");
             });
+
     }
     connection.end();
 });
