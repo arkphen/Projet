@@ -27,7 +27,7 @@ if (err) throw err;
 connection.query(
     {
         sql: "insert into Liste_Clients values(null,?,?,?,?,?)",
-        values: [Prenom,Nom,Adresse,Ville,Permit],
+        values: [Prenom,Nom,Adresse,Ville,Permit]
 
     },
 server.listen(PORT, function() {

@@ -13,17 +13,17 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
 
 
-    for (var i = 0; i< 300; i++) {
-        var Prenom = "User" + i;
-        var Nom = "Last" + i;
-        var Adresse = "adresse" + i;
-        var Ville = "ville" + i;
-        var Permit = "numero permit" + i;
+    for (var i = 0; i < 5; i++) {
+        var Prenom = "User_" + i;
+        var Nom = "Last_" + i;
+        var Adresse = "Adresse_" + i;
+        var Ville = "Ville_" + i;
+        var Permit = "Permit" + i;
         if (err) throw err;
         connection.query(
             {
                 sql: "insert into Liste_Clients values(null,?,?,?,?,?)",
-                values: [Prenom,Nom,Adresse,Ville,Permit],
+                values: [Prenom,Nom,Adresse,Ville,Permit]
 
             },
 
