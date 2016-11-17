@@ -11,16 +11,16 @@ var connection = mysql.createConnection({
 
 connection.connect(function (err) {
 
-    for (var a = 0; a < 300; a++) {
+    for (var a = 0; a < 500; a++) {
         var Date_Debut = 20160101;
-        var Vehicule = null + a;
-        var ID_Client = null + a;
+        var Vehicule_Num_Series = "Vehicule_" + a;
+        var Permit_Client = "Permit_" + a;
 
         if (err) throw err;
         connection.query(
             {
                 sql: "insert into Location values(null,?,?,?)",
-                values: [Date_Debut, Vehicule, ID_Client]
+                values: [Date_Debut, Vehicule_Num_Series, Permit_Client]
             },
 
             function (err, rows, fields) {
@@ -30,18 +30,18 @@ connection.connect(function (err) {
             });
 
     }
-    for (var b = 0; b < 300; b++) {
+    for (var b = 0; b < 500; b++) {
         var Marque = "marque_" + b;
         var Modele = "modele_" + b;
         var Annee = 20160101;
         var Kilometrage = null + b;
-        var Numero_Permit = null + b;
+        var Numero_Series = "#Vehicule_" + b;
 
         if (err) throw err;
         connection.query(
             {
                 sql: "insert into Liste_Vehicules values(null,?,?,?,?,?)",
-                values: [Marque, Modele, Annee, Kilometrage, Numero_Permit]
+                values: [Marque, Modele, Annee, Kilometrage, Numero_Series]
             },
 
             function (err, rows, fields) {
@@ -50,12 +50,12 @@ connection.connect(function (err) {
                 console.log("added");
             });
     }
-    for (var c = 0; c < 300; c++) {
+    for (var c = 0; c < 500; c++) {
         var Prenom = "prenom_" + c;
         var Nom = "nom_" + c;
         var Adresse = "adresse_" + c;
         var Ville = "ville_" + c;
-        var Permit = null + c;
+        var Permit = "Permit_" + c;
 
         if (err) throw err;
         connection.query(
