@@ -38,7 +38,7 @@ app.use(
         user: 'acharland',
         password: '',
         port: 3306, //port mysql
-        database: 'Test'
+        database: 'A'
     }, 'request')
 );//route index, hello world
 app.get('/', routes.index);//route customer list
