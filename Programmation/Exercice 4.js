@@ -1,15 +1,19 @@
-var http = require('http');
+/**
+ * Created by acharland on 11/26/16.
+ */
+/** Heure **/
+var timeObj = new Date();
+var heures = timeObj.getHours();
+var minutes = timeObj.getMinutes();
+var secondes = timeObj.getSeconds();
+newtime = heures + ":" + minutes + ":" + secondes;
+console.log(newtime);
 
-// Start an HTTP server
-function ladate() {
 
-}
-http.createServer(function (request, response) {
-
-    Function
-    ladate();
-    {
-        response.writeHead(200, {"Content-Type": "text/plain"});
-        response.end("Hello Connect");
-    }
-}).listen(8081);
+/** Date **/
+var dateObj = new Date();
+var mois = dateObj.getUTCMonth() + 1; //months from 1-12
+var jours = dateObj.getUTCDate();
+var annees = dateObj.getUTCFullYear();
+newdate = annees + "/" + mois + "/" + jours;
+console.log(newdate);
