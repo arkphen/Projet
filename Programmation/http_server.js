@@ -29,7 +29,7 @@ connection.query(
         sql: "insert into Liste_Clients values(null,?,?,?,?,?)",
         values: [Prenom,Nom,Adresse,Ville,Permit]
 
-    },
+    });
 server.listen(PORT, function() {
 
     console.log("Server listening on: http://localhost:%s", PORT);

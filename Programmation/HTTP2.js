@@ -21,7 +21,7 @@ function handleRequest(request, response) {
         host: 'localhost',
         user: 'acharland',
         password: '',
-        database: 'MonApplication'
+        database: 'Agence_de_location'
     });
 
     connection.connect(function (err) {
@@ -35,7 +35,7 @@ function handleRequest(request, response) {
             function (err, rows, fields) {
                 if (err) throw err;
 
-                response.end(JSON.stringify(rows));
+                response.end(JSON.stringify);
                 connection.end();
             });
     });
