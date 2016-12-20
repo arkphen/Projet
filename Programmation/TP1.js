@@ -1,11 +1,11 @@
-var mysql = require('mysql');
+    var mysql = require('mysql');
 
-var pool = mysql.createPool({
-    host: 'localhost',
-    user: 'acharland',
-    password: '',
-    database: 'Agence_de_location'
-});
+    var pool = mysql.createPool({
+        host: 'localhost',
+        user: 'acharland',
+        password: '',
+        database: 'Agence_de_Location'
+    });
 
 var createTable = 'INSERT INTO Liste_Clients(Prenom,Nom,Adresse,Ville,Permit) VALUE(?,?,?,?,?)';
 
@@ -28,9 +28,8 @@ pool.getConnection(function (err, connection) {
     //Read table.
     connection.query(readTable, function (err, rows) {
         if (err) throw err;
-        else {
-            console.log(rows);
-        }
+        console.log(rows);
+
     });
 
     //Update a record.

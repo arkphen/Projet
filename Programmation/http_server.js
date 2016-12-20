@@ -14,7 +14,7 @@ function handleRequest(request, response) {
         host: 'localhost',
         user: 'acharland',
         password: '',
-        database: 'Agence_de_location'
+        database: 'Compagnie_de_Location'
     });
 
     connection.connect(function (err) {
